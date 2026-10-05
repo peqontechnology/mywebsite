@@ -75,3 +75,9 @@ NOTE
 ----
 The PHP file is included only if you later move the website to PHP-enabled hosting.
 For GitHub Pages, the FormSubmit form in index.html is the active contact form.
+
+LOGO ROBUST FIX
+----------------
+This version embeds the PEQON logo directly inside index.html, so the logo does not depend on the assets folder.
+When uploading, replace the repository index.html with this version.
+
