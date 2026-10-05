@@ -102,8 +102,12 @@
         </div>
       </div>
       <div class="form-card reveal reveal-delay">
-        <form id="contactForm" action="contact.php" method="POST">
-          <input type="hidden" name="website" value="">
+        <form id="contactForm" action="https://formsubmit.co/peqontechnology@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New PEQON Technology Course Enquiry">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://peqontechnology.github.io/mywebsite/?submitted=1#contact">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
           <div class="form-row"><label>Full Name<input type="text" name="name" required placeholder="Your name"></label><label>Phone Number<input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX"></label></div>
           <label>Email Address<input type="email" name="email" required placeholder="you@example.com"></label>
           <label>Interested Course<select name="course" required><option value="">Select a course</option><option>Software Testing</option><option>Python</option><option>DevOps</option><option>AI & ML</option><option>Not sure yet</option></select></label>
