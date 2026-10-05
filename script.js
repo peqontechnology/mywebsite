@@ -1,0 +1,12 @@
+const navbar=document.getElementById('navbar');
+const glow=document.querySelector('.cursor-glow');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>20));
+window.addEventListener('pointermove',e=>{if(glow){glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'}});
+const menu=document.querySelector('.menu-btn'),links=document.querySelector('.nav-links');
+menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open)});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
+const form=document.getElementById('contactForm'),status=document.getElementById('formStatus');
+form.addEventListener('submit',async e=>{e.preventDefault();status.textContent='Sending your enquiry...';try{const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'X-Requested-With':'XMLHttpRequest'}});const data=await res.json();status.textContent=data.message;if(data.ok)form.reset()}catch(err){status.textContent='Unable to send right now. Please call or WhatsApp us.'}});
